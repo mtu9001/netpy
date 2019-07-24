@@ -34,10 +34,10 @@ Username: netconfuser
 Password:
 
 Logging in as netconfuser
-********************************************************************************
+******************************
 netconfuser@LAB-SRX-0>
 
-********************************************************************************
+******************************
 Sending command: show system license
 
 License usage:
@@ -55,7 +55,7 @@ Licenses installed:
     Virtual Appliance - Virtual Appliance
       count-down, Original validity: 60 days
 
-********************************************************************************
+******************************
 Logging out and closing session . . .
 
 user$
@@ -80,7 +80,7 @@ Please view the official [Fortinet REST API guide](https://www.github.com/) for 
 
 ### [get_fgt_info.py](https://www.github.com/)
 
-```bash
+```zsh
 python get_fgt_info.py
 ```
 
@@ -93,12 +93,12 @@ Please view the official [Pulse Secure PCS/PPS REST API Solutions Guide](https:/
 
 ### [get_psa_info.py](https://www.github.com/)
 
-```bash
+```zsh
 python get_psa_info.py
 ```
 
 ### [psa_bp.py](https://www.github.com/)
 
-```bash
+```zsh
 python psa_bp.py
 ```

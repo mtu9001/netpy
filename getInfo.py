@@ -65,15 +65,15 @@ def getHostInfo(host, user, passwd):
     ]
 
     print("Logging in as " + user)
-    print("*" * 80)
+    print("*" * 30)
     print(net_connect.find_prompt())
     print()
 
     for command in commands:
-        print("*" * 80)
+        print("*" * 30)
         print("Sending command: " + command)
         print(net_connect.send_command(command))
 
-    print("*" * 80)
+    print("*" * 30)
     print("Logging out and closing session . . .")
     net_connect.disconnect()
