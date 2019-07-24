@@ -35,15 +35,14 @@ def getLicense(host, user, passwd):
     command = "show system license"
 
     print("Logging in as " + user)
-    print("*" * 80)
-    print(net_connect.find_prompt())
+    print("*" * 30)
+    # print(net_connect.find_prompt())
     print()
 
-    print("*" * 80)
     print("Sending command: " + command)
     output = net_connect.send_command(command)
     print(output)
-    print("*" * 80)
+    print()
     print("Logging out and closing session . . .")
     net_connect.disconnect()
     print()

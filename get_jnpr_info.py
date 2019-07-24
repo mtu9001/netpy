@@ -8,4 +8,11 @@ user = input("Username: ")
 passwd = getpass()
 
 # connect to device and get RSI
-# myRSI = getRSI(host, user, passwd)
+# get License information
+# getLicense(host, user, passwd)
+
+# get RSI information
+# getRSI(host, user, passwd)
+
+# get Host information
+getHostInfo(host, user, passwd)

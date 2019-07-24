@@ -13,10 +13,9 @@ user_config_path = "/api/v1/configuration/users"
 local_user_path = "/api/v1/configuration/authentication/auth-servers/auth-server/Sys-Local/local/users/user/user0001"
 active_user_path = "/api/v1/system/active-users"
 
-# static host, use input and getpass
-host = "10.100.100.251"
-uname = "admin"
-passwd = "Juniper12345!!"
+host = input("Host IP: ")
+uname = input("Username: ")
+passwd = getpass("Password: ")
 
 # get API key
 auth_response = requests.get(
