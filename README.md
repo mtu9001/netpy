@@ -21,7 +21,7 @@ The following scripts use a user provided username and password for basic ssh au
 
 Please view the official [Juniper REST API guide](https://www.juniper.net/documentation/en_US/junos/information-products/pathway-pages/rest-api/rest-api.html) for more information.
 
-### [get_jnpr_info.py](https://www.github.com/)
+### [get_jnpr_info.py](https://github.com/mtu9001/netpy/blob/master/get_jnpr_info.py)
 
 This script collects host, username, password information and calls functions from getInfo.py.
 
@@ -61,7 +61,7 @@ Logging out and closing session . . .
 user$
 ```
 
-### [getInfo.py](https://www.github.com/)
+### [getInfo.py](https://github.com/mtu9001/netpy/blob/master/getInfo.py)
 
 This includes the getRSI, getLicense, and getHostInfo functions called by get_jnpr_info.py.
 
@@ -78,7 +78,7 @@ Sample scripts to get information from FortiOS devices.
 
 Please view the official [Fortinet REST API guide](https://www.github.com/) for more information.
 
-### [get_fgt_info.py](https://www.github.com/)
+### [get_fgt_info.py](https://github.com/mtu9001/netpy/blob/master/get_fgt_info.py)
 
 ```zsh
 python get_fgt_info.py
@@ -91,13 +91,15 @@ Sample scripts to get information from Pulse Secure PSA devices and setup recomm
 
 Please view the official [Pulse Secure PCS/PPS REST API Solutions Guide](https://www-prev.pulsesecure.net/download/techpubs/current/1470/pulse-connect-secure/pcs/9.0rx/ps-pcs-pps-9.0r3-rest-api-solutions-guide.pdf) for more information.
 
-### [get_psa_info.py](https://www.github.com/)
+### [get_psa_info.py](https://github.com/mtu9001/netpy/blob/master/get_psa_info.py)
 
 ```zsh
 python get_psa_info.py
 ```
 
 ### [psa_bp.py](https://www.github.com/)
+
+Not available yet.
 
 ```zsh
 python psa_bp.py
