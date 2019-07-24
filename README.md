@@ -12,7 +12,6 @@ Currently these are command line scripts and typically run from a terminal of so
 
 ## Juniper
 
----
 Sample scripts to get information from Juniper devices and retrieve RSI for JTAC.
 
 JTAC typically asks for RSI (request support information) in a zipped file either when on the phone, or when creating a support ticket.
@@ -73,7 +72,6 @@ getHostInfo uses netmiko to connect to the device and run a handful of commands 
 
 ## Fortinet
 
----
 Sample scripts to get information from FortiOS devices.
 
 Please view the official [Fortinet REST API guide](https://www.github.com/) for more information.
@@ -86,7 +84,6 @@ python get_fgt_info.py
 
 ## Pulse Secure
 
----
 Sample scripts to get information from Pulse Secure PSA devices and setup recommended best practices.
 
 Please view the official [Pulse Secure PCS/PPS REST API Solutions Guide](https://www-prev.pulsesecure.net/download/techpubs/current/1470/pulse-connect-secure/pcs/9.0rx/ps-pcs-pps-9.0r3-rest-api-solutions-guide.pdf) for more information.
