@@ -4,53 +4,64 @@ from getpass import getpass
 headers = {"content-type": "application/json"}
 
 # Variables
-pAuth = "/api/v1/auth/"
-pUserRoles = "/api/v1/configuration/users/user-roles/"
+auth_path = "/api/v1/auth/"
+config_path = "/api/v1/configuration"
+admin_path = "/api/v1/configuration/administrators"
+admin_auth_path = "/api/v1/configuration/authentication"
+sys_config_path = "/api/v1/configuration/system"
+user_config_path = "/api/v1/configuration/users"
+local_user_path = "/api/v1/configuration/authentication/auth-servers/auth-server/Sys-Local/local/users/user/*"
 
-host = input("Hostname : ")
-uname = input("Username : ")
-passwd = getpass("Password : ")
+host = "10.100.100.251"
+uname = "admin"
+passwd = "Juniper12345!!"
 
-# Connect with username/password to retreive api_key
-r = requests.get(
-    "https://" + host + pAuth, verify=False, auth=(uname, passwd), headers=headers
+# get API key
+auth_response = requests.get(
+    "https://" + host + auth_path, verify=False, auth=(uname, passwd), headers=headers
 )
+auth_data = auth_response.json()
+api_key = auth_data["api_key"]
+# print(auth_data)
+print(api_key)
 
-# Show feedback
-print("*" * 80)
-auth_title = "Auth Information"
-print(f"{auth_title:^80}")
-print(f"Headers:          {headers}")
-print(f"Path to Auth:     {pAuth}")
-print(f"Host:             {host}")
-print(f"Username:         {uname}")
-print(f"Password:         {passwd}")
-print()
-print(f"Status Code:      {r.status_code}")
-print(f"JSON Information: {r.json()}")
-d = r.json()
-print(f"JSON Key:         {d['api_key']}")
-api_key = d["api_key"]
-print("*" * 80)
+"""
+config_response = requests.get(
+    "https://" + host + config_path, verify=False, auth=(api_key, "")
+)
+config_data = config_response.json()
+print(config_data)
 
-# Connect with api_key and pull configuration information
-try:
-    config_request = requests.get(
-        "https://10.100.100.251/api/v1/configuration", verify=False, auth=(api_key, "")
-    )
-except requests.exceptions.ConnectionError:
-    r.status_code = "Connection Refused"
+admin_response = requests.get(
+    "https://" + host + admin_path, verify=False, auth=(api_key, "")
+)
+admin_data = admin_response.json()
+print(admin_data)
 
-# Show feedback
-print("*" * 80)
-config_title = "Configuration Information"
-print(f"{config_title:^80}")
-print()
-data = config_request.json()
-print(data)
-for key in data:
-    print(f"{key} equal to {data[key]}")
-    data1 = data[key]
-    for element in data1:
-        print(f"{element} equal to {data1[element]}")
-print("*" * 80)
+admin_auth_response = requests.get(
+    "https://" + host + admin_auth_path, verify=False, auth=(api_key, "")
+)
+admin_auth_data = admin_auth_response.json()
+print(admin_auth_data)
+
+sys_config_response = requests.get(
+    "https://" + host + sys_config_path, verify=False, auth=(api_key, "")
+)
+sys_config_data = sys_config_response.json()
+print(sys_config_data)
+
+user_config_response = requests.get(
+    "https://" + host + user_config_path, verify=False, auth=(api_key, "")
+)
+user_config_data = user_config_response.json()
+print(user_config_data)
+"""
+
+local_user_response = requests.get(
+    "https://" + host + local_user_path,
+    verify=False,
+    auth=(api_key, ""),
+    headers=headers,
+)
+local_user_data = local_user_response.json()
+print(local_user_data)
