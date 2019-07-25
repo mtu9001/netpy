@@ -45,7 +45,6 @@ def getLicense(host, user, passwd):
     print()
     print("Logging out and closing session . . .")
     net_connect.disconnect()
-    print()
 
 
 def getHostInfo(host, user, passwd):
@@ -75,5 +74,23 @@ def getHostInfo(host, user, passwd):
         print(net_connect.send_command(command))
 
     print("*" * 30)
+    print("Logging out and closing session . . .")
+    net_connect.disconnect()
+
+
+def setRescueConfig(host, user, passwd):
+    net_connect = Netmiko(
+        host, username=user, password=passwd, device_type="juniper_junos"
+    )
+
+    command = "request system configuration rescue save"
+
+    print("Logging in as " + user)
+    print("*" * 30)
+    # print(net_connect.find_prompt())
+    print()
+
+    print("Sending command: " + command)
+    net_connect.send_command(command)
     print("Logging out and closing session . . .")
     net_connect.disconnect()

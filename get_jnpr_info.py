@@ -1,5 +1,5 @@
 from getpass import getpass
-from getInfo import getHostInfo, getLicense
+from getInfo import getHostInfo, getLicense, setRescueConfig
 
 
 # gather connection information
@@ -16,3 +16,4 @@ passwd = getpass()
 
 # get Host information
 getHostInfo(host, user, passwd)
+setRescueConfig(host, user, passwd)

@@ -12,6 +12,7 @@ sys_config_path = "/api/v1/configuration/system"
 user_config_path = "/api/v1/configuration/users"
 local_user_path = "/api/v1/configuration/authentication/auth-servers/auth-server/Sys-Local/local/users/user/user0001"
 active_user_path = "/api/v1/system/active-users"
+sys_info_path = "/api/v1/system/system-information"
 
 host = input("Host IP: ")
 uname = input("Username: ")
@@ -71,7 +72,6 @@ local_user_response = requests.get(
 )
 local_user_data = local_user_response.json()
 print(local_user_data)
-"""
 
 # get active users
 active_user_response = requests.get(
@@ -82,4 +82,12 @@ active_user_response = requests.get(
 )
 active_user_data = active_user_response.json()
 print(active_user_data)
+
+# get system information
+sys_info_response = requests.get(
+    "https://" + host + sys_info_path, verify=False, auth=(api_key, ""), headers=headers
+)
+sys_info_data = sys_info_response.json()
+print(sys_info_data)
+"""
 
